@@ -14,7 +14,7 @@ export class ConcertController {
       return this.concertService.create(createConcertDto);
     }
     catch {
-      throw new BadRequestException("Invalida data entry");
+      throw new BadRequestException("Invalid data entry");
     }
   }
 

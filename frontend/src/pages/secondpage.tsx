@@ -31,7 +31,7 @@ export default function SecondPage(){
         }
 
         try {
-            const response = await HttpRequests.createData("koncertek", newConcert);
+            const response = await HttpRequests.createData("concert", newConcert);
             if (!response.ok){
                 console.log("An error ocurred while creating data");
             } else {

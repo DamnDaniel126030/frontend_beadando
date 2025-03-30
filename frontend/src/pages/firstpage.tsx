@@ -13,7 +13,7 @@ export default function FirstPage() {
 
     async function getConcertData(){
         try {
-            const data = await HttpRequests.getData("koncertek");
+            const data = await HttpRequests.getData("concert");
             setConcertData(data);
         } catch (error) {
             console.log(error);
@@ -22,7 +22,7 @@ export default function FirstPage() {
 
     async function updateData(id: number){
         try {
-            const response = await HttpRequests.updateData("koncertek", {isCancelled: true}, id);
+            const response = await HttpRequests.updateData("concert", {isCancelled: true}, id);
             if (!response.ok){
                 console.log("An error occurred while updating");
             } else {
@@ -35,7 +35,7 @@ export default function FirstPage() {
 
     async function deleteData(id: number){
         try {
-            const response = await HttpRequests.deleteData("koncertek", id);
+            const response = await HttpRequests.deleteData("concert", id);
             if (!response.ok){
                 console.log("An error occurred while updating");
             } else {
@@ -80,8 +80,8 @@ export default function FirstPage() {
                             </tr>
                         ))
                     }
-                    <button type="button" className="btn btn-secondary"><Link to="/secondpage" >Új koncert felvétele</Link></button>
                 </tbody>
+                <button type="button" className="btn btn-secondary"><Link to="/secondpage" >Új koncert felvétele</Link></button>
             </table>
         </div>
     </>
